@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html> 
+<head>
+    <title>Register</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link href="TopStyle.css" rel="stylesheet">
+    <link href="RegisterStyle.css" rel="stylesheet">
+    <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+    <script src="RegisterJs.js"></script>
+    <script>
+    $(function() {
+        $("#register-form").validate({
+        rules: {
+            firstname: {
+            required:true,
+            minlength: 2,
+            maxlength: 20
+            },
+            lastname: {
+            required:true,
+            minlength: 2,
+            maxlength: 20
+            },
+            email: {
+            required: true,
+            email:true
+            },
+            password1: {
+            required: true,
+            minlength: 8
+            },
+            password2: {
+            required: true,
+            minlength: 8,
+            equalTo: "#password1"
+            },
+            age: {
+            digits:true,
+            required:true,
+            range: [18, 100]
+            }
+        },
+        messages: {
+            firstname: {
+            required: "Vārds ir obligāts",
+            minlength: "Vārdam ir jābūt 2-20 simbolus garam",
+            maxlength: "Vārdam ir jābūt 2-20 simbolus garam"
+            },
+            lastname: {
+            required: "Vārds ir obligāts",
+            minlength: "Vārdam ir jābūt 2-20 simbolus garam",
+            maxlength: "Vārdam ir jābūt 2-20 simbolus garam"
+            },
+            password1: {
+            required: "Parole ir obligāta",
+            minlength: "Parolei ir jābūt vismaz 8 simbolus garai"
+            },
+            password2: {
+            required: "Parole ir obligāta",
+            minlength: "Parolei ir jābūt vismaz 8 simbolus garai",
+            equalTo: "Parolēm ir jāsakrīt"
+            },
+            email: {
+            required: "E-pasts ir obligāts",
+            email: "E-pasta formāts nav derīgs"
+            },
+            age: {
+            digits: "Drīkst ievadīt tikai ciparus",
+            required: "Vecums ir obligāts",
+            range: "Vecumam ir jabūt no 18 līdz 100"
+            }
+        },
+        submitHandler: function(form) {
+            form.submit();
+        }
+        });
+     });
+  
+    </script>
+</head>
+<body>
+    <header id="header">
+        <div id="logo">
+        <h1><a href="index.html">Ziedu salons</a></h1>
+        </div>
+        <div id="nav">
+            <ul>
+		<li><a href="#">Ienākt</a></li>
+		<li class="active"><a href="Register.html">Reģistrēties</a></li>
+		<li><a href="#"><span class="glyphicon glyphicon-shopping-cart" ></span> <span class="badge">4</span></a></li>
+            </ul>
+	</div>
+    </header>
+    <div id="topnav">
+        <ul>
+            <li><a href="index.html">Sākums</a></li>
+            <li><a href="#">Ziedi</a></li>
+            <li><a href="#">Pušķi</a></li>
+            <li><a href="#">Augi</a></li>
+            <li><a href="#">Pakalpojumi</a></li>
+            <li><a href="#">Par mums</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="jumbotron">
+            <h2>Reģistrācija</h2>
+            <br>
+            <button id="button1"><b>Noteikumi</b></button>
+            
+            <div id="Noteikumi">
+                <br>
+                <ol>
+                    <li>Visi ievietotie lietotāju personas dati tiek aizsargāti atbilstoši LR likumdošanai.</li>
+                    <li>Šo datu apstrāde tiek veikta, ievērojot LR likumdošanā noteiktos vispārīgos personas datu apstrādes principus.</li>
+                    <li>Visa informācija, kas saistīta ar portāla lietotājiem, kā arī viņu personīgie dati, netiks sniegti trešajām personām bez rakstiskas atļaujas no paša lietotāja puses.</li>
+                </ol>
+            </div>
+        
+            <form id="register-form" action="http://naivist.net/form/" method="get"> 
+                <br>
+            <div class="form-group">
+                <label for="firstname">Vārds</label>
+                <input type="text" class="form-control" placeholder="Ievadiet vārdu" name="firstname" id="firstname"><br />
+            </div> 
+            <div class="form-group">
+                <label for="lastname">Uzvārds</label>
+                <input type="text" class="form-control" placeholder="Ievadiet uzvārdu" id="lastname" name="lastname" /><br />
+            </div>
+            <div class="form-group">
+                <label for="email">E-pasta adrese</label>
+                <input type="email" class="form-control" placeholder="Ievadiet e-pastu" id="email" name="email" /><br />
+            </div>
+            <div class="form-group">
+                <label for="password1">Parole</label>
+                <input type="password" class="form-control" placeholder="Ievadiet paroli" id="password1" name="password1" /><br />
+            </div>
+            <div class="form-group">
+                <label for="password2">Parole atkārtoti</label>
+                <input type="password" class="form-control" placeholder="Ievadiet paroli" id="password2" name="password2" /><br />
+            </div>
+             <div class="form-group">
+                <label for="age">Vecums</label>
+                <input type="number" class="form-control" placeholder="Ievadiet vecumu" id="age" name="age" /><br />
+            </div>
+            <div class="form-group">
+                <label for="gender">Dzimums</label>
+                <select class="form-control" id="gender" name="gender" >
+                    <option value="">--</option>
+                    <option value="female">Sieviete</option>
+                    <option value="male">Vīrietis</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-default">Reģistrēties</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

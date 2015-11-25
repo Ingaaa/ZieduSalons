@@ -1,0 +1,43 @@
+.jumbotron{
+    background-color:#E0DED3;
+    color:#65645F;
+    box-shadow: 0px 0px 2px #65645F;
+}
+.error { 
+    color: red; 
+    border-color: red; 
+}
+.valid { 
+    color: green; 
+    border-color: green; 
+}
+#button1{
+    color: #fff;
+    background: rgba(0,0,0, .8);
+    border-radius: 3px;
+    z-index: 1;
+    border:0;
+    opacity: .3; 
+}
+
+#button1:hover, #button1:active{
+    opacity: .7;
+    border:0;
+}
+#Noteikumi ol{
+    color: #fff;
+    list-style-type: upper-roman;
+    background: rgba(0,0,0, .8);
+    border-radius: 6px;
+    z-index: 1;
+    border:0;
+    opacity: .5; 
+    width:100%;
+    padding: 10px 10px;
+    padding-left:50px;
+}
+@media print {
+    #button1{
+        display:none;
+    }
+}
